@@ -1,4 +1,4 @@
-use client";
+"use client";
 
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import NavbarLayoutFloatingInline from '@/components/navbar/NavbarLayoutFloatingInline';
@@ -35,17 +35,15 @@ export default function Home() {
       borderRadius="sharp"
     >
       <div id="nav" data-section="nav" className="scroll-mt-24">
-        <div className="mx-auto px-4 md:px-6">
-          <NavbarLayoutFloatingInline
-            navItems={[
-              { name: "Home", id: "home" },
-              { name: "About", id: "about" },
-              { name: "Products", id: "products" },
-              { name: "Contact", id: "contact" }
-            ]}
-            brandName="Bakery"
-          />
-        </div>
+        <NavbarLayoutFloatingInline
+          navItems={[
+            { name: "Home", id: "home" },
+            { name: "About", id: "about" },
+            { name: "Products", id: "products" },
+            { name: "Contact", id: "contact" }
+          ]}
+          brandName="Bakery"
+        />
       </div>
 
       <div id="hero" data-section="hero" className="scroll-mt-24">
@@ -54,6 +52,7 @@ export default function Home() {
             title="Welcome to Our Bakery"
             description="Experience the finest baked goods made fresh each day."
             imageSrc={resolveAssetUrl("hero-image")}
+            imageAlt={resolveAssetAlt("hero-image")}
             buttons={[
               { text: "See Our Products", href: "products" },
               { text: "Learn More", href: "about" }
@@ -72,6 +71,7 @@ export default function Home() {
               { title: "Freshly Baked", description: "Every item is baked fresh daily to ensure the best taste." }
             ]}
             imageSrc={resolveAssetUrl("about-image")}
+            imageAlt={resolveAssetAlt("about-image")}
           />
         </div>
       </div>
@@ -82,9 +82,9 @@ export default function Home() {
             title="Our Products"
             description="Handcrafted delights baked with love."
             products={[
-              { id: "1", brand: "Bakery", name: "Sourdough Bread", price: "$5", rating: 5, reviewCount: "120", imageSrc: resolveAssetUrl("product-1-image") },
-              { id: "2", brand: "Bakery", name: "Chocolate Croissant", price: "$3", rating: 5, reviewCount: "95", imageSrc: resolveAssetUrl("product-2-image") },
-              { id: "3", brand: "Bakery", name: "Blueberry Muffin", price: "$2.50", rating: 4, reviewCount: "80", imageSrc: resolveAssetUrl("product-3-image") }
+              { id: "1", brand: "Bakery", name: "Sourdough Bread", price: "$5", rating: 5, reviewCount: "120", imageSrc: resolveAssetUrl("product-1-image"), imageAlt: resolveAssetAlt("product-1-image") },
+              { id: "2", brand: "Bakery", name: "Chocolate Croissant", price: "$3", rating: 5, reviewCount: "95", imageSrc: resolveAssetUrl("product-2-image"), imageAlt: resolveAssetAlt("product-2-image") },
+              { id: "3", brand: "Bakery", name: "Blueberry Muffin", price: "$2.50", rating: 4, reviewCount: "80", imageSrc: resolveAssetUrl("product-3-image"), imageAlt: resolveAssetAlt("product-3-image") }
             ]}
           />
         </div>
@@ -97,6 +97,7 @@ export default function Home() {
             title="Get in Touch"
             description="We'd love to hear from you or welcome you to our bakery!"
             imageSrc={resolveAssetUrl("hero-image")}
+            imageAlt={resolveAssetAlt("hero-image")}
             onSubmit={() => console.log("Submitted")}
           />
         </div>

@@ -12,7 +12,7 @@ import {
   Nunito
 } from "next/font/google";
 import "./globals.css";
-import {PostHogWrapper} from "@/components/PostHogWrapper";
+import { PostHogWrapper } from "@/components/PostHogWrapper";
 import AuroraBackground from "@/components/background/AuroraBackground";
 
 const interTight = Inter_Tight({
@@ -82,10 +82,12 @@ export const metadata: Metadata = {
     title: "Bakery",
     description: "Enjoy our fresh baked goods made with love and the finest ingredients.",
     siteName: "Bakery",
-    images: [{
-      url: "https://images.pexels.com/photos/34307858/pexels-photo-34307858.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-      alt: "Freshly baked bread"
-    }],
+    images: [
+      {
+        url: "https://images.pexels.com/photos/34307858/pexels-photo-34307858.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        alt: "Freshly baked bread"
+      }
+    ],
     type: "website"
   }
 };
@@ -97,13 +99,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <PostHogWrapper>
-      <body
-          className={`${interTight.variable} ${playfairDisplay.variable} ${roboto.variable} ${openSans.variable} ${lato.variable} ${montserrat.variable} ${poppins.variable} ${raleway.variable} ${ubuntu.variable} ${nunito.variable} antialiased`}
-      >
-      <AuroraBackground />
-      {children}
-      
+      <PostHogWrapper>
+        <body className={`${interTight.variable} ${playfairDisplay.variable} ${roboto.variable} ${openSans.variable} ${lato.variable} ${montserrat.variable} ${poppins.variable} ${raleway.variable} ${ubuntu.variable} ${nunito.variable} antialiased`}>
+          <AuroraBackground />
+          {children}
+        
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -942,7 +942,7 @@ export default function RootLayout({
           }}
         />
       </body>
-    </PostHogWrapper>
+      </PostHogWrapper>
     </html>
   );
 }
